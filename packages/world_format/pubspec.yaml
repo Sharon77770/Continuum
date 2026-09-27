@@ -1,0 +1,10 @@
+name: world_format
+resolution: workspace
+description: Serialization boundary for Continuum world packs.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+dependencies:
+  game_core:
+    path: ../game_core

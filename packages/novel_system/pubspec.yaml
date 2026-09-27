@@ -1,0 +1,10 @@
+name: novel_system
+resolution: workspace
+description: Visual novel rules boundary for Continuum.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+dependencies:
+  game_core:
+    path: ../game_core

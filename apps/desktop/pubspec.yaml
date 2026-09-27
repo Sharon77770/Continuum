@@ -1,0 +1,30 @@
+name: continuum_desktop
+resolution: workspace
+description: Continuum desktop story world studio.
+publish_to: none
+version: 0.1.0+1
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_riverpod: ^2.6.1
+  flutter_secure_storage: ^10.2.0
+  file_selector: ^1.0.4
+  crypto: ^3.0.6
+  path: ^1.9.1
+  sqflite_common_ffi: ^2.3.6
+  game_core:
+    path: ../../packages/game_core
+  world_format:
+    path: ../../packages/world_format
+  novel_system:
+    path: ../../packages/novel_system
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
+  uses-material-design: true

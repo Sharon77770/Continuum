@@ -1,0 +1,16 @@
+.dart_tool/
+.packages
+build/
+**/build/
+*.iml
+.idea/
+.vscode/
+# Widget Preview related
+.widget_preview/
+
+# Local Pub cache used when the global cache is read-only
+.pub-cache/
+
+.pub-cache/
+.localappdata/
+.appdata/

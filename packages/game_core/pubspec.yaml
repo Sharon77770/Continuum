@@ -1,0 +1,7 @@
+name: game_core
+resolution: workspace
+description: Renderer-independent domain values for Continuum.
+version: 0.1.0
+publish_to: none
+environment:
+  sdk: '>=3.5.0 <4.0.0'

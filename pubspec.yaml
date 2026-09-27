@@ -1,0 +1,9 @@
+name: continuum_workspace
+publish_to: none
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+workspace:
+  - apps/desktop
+  - packages/game_core
+  - packages/novel_system
+  - packages/world_format
