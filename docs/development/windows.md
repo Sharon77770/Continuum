@@ -22,6 +22,12 @@ flutter run -d windows
 
 The doctor script reports Flutter and Dart availability, CMake, the Visual Studio C++ workload, `flutter doctor -v`, Flutter devices, and workspace dependency resolution. It does not install software or alter system configuration. NuGet is reported as optional because Flutter/Visual Studio can provide the client used during native builds.
 
+## Build and distribute the single-file installer
+
+Users download `artifacts/Continuum-Setup-v1-x64.msi` from the link in the repository root `README.md` and run it with Windows Installer. The per-user MSI embeds every file under the Windows x64 Release runner directory, including `continuum.exe`, Flutter assets, native plugins, and SQLite. It installs under `%LOCALAPPDATA%\Continuum` and adds a Start menu shortcut for the current user without requiring administrator permission.
+
+From the repository root, run `./scripts/package-windows.ps1` to build the Release app and package it. The script installs pinned WiX Toolset 4.0.5 into the ignored `.tools/wix` directory on first use and writes the MSI to `artifacts/Continuum-Setup-v1-x64.msi`. `-SkipBuild` packages an existing Release output. The application bundle lives in the MSI; it does not require users to download a separate ZIP or runtime folder.
+
 ## Analyze and test
 
 From `apps/desktop`:

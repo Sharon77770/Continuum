@@ -1,0 +1,41 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+  <Package
+    Name="Continuum"
+    Manufacturer="Continuum Project"
+    Version="1.0.0"
+    UpgradeCode="6E1D69AB-23C9-4CA5-A50D-E08E3A9C6C2B"
+    Scope="perUser">
+    <MajorUpgrade DowngradeErrorMessage="A newer version of Continuum is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <StandardDirectory Id="LocalAppDataFolder">
+      <Directory Id="INSTALLFOLDER" Name="Continuum" />
+    </StandardDirectory>
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ProgramMenuSubfolder" Name="Continuum" />
+    </StandardDirectory>
+
+    <Feature Id="Complete" Title="Continuum" Level="1">
+      <ComponentGroupRef Id="ApplicationFiles" />
+      <Component Id="InstallDirectoryCleanup" Directory="INSTALLFOLDER" Guid="B12A7EF4-1D9E-4514-9AA1-937B8B3F0011">
+        <RemoveFolder Id="RemoveInstallDirectory" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Continuum\Directories" Name="InstallDirectory" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+      <Component Id="StartMenuShortcut" Directory="ProgramMenuSubfolder" Guid="2E1D69AB-23C9-4CA5-A50D-E08E3A9C6C2B">
+        <Shortcut
+          Id="ContinuumStartMenuShortcut"
+          Name="Continuum"
+          Target="[INSTALLFOLDER]continuum.exe"
+          WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveContinuumProgramMenuFolder" On="uninstall" />
+        <RegistryValue
+          Root="HKCU"
+          Key="Software\Continuum"
+          Name="Installed"
+          Type="integer"
+          Value="1"
+          KeyPath="yes" />
+      </Component>
+    </Feature>
+  </Package>
+</Wix>

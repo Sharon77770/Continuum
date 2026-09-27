@@ -24,7 +24,9 @@
 | `apps/desktop/lib/features/world/domain` | World definition repository contract | Desktop | `game_core` |
 | `apps/desktop/lib/features/world/data` | SQLite schema, migrations and mapping for world definitions, campaigns, and provider preferences | Desktop | `game_core`, novel repository contracts, sqflite FFI |
 | `apps/desktop/windows/runner` | Windows host window and Flutter engine bootstrap | Desktop platform | Flutter Windows embedding API |
-| `scripts` | PowerShell Windows environment diagnostics and repeatable build/smoke commands | Development | Flutter, Dart, Visual Studio |
+| `scripts` | PowerShell Windows environment diagnostics, repeatable app builds, and MSI packaging authoring | Development and distribution | Flutter, Dart, Visual Studio, WiX |
+| `scripts/installer` | WiX authoring that embeds the complete Windows Release output and creates a Start menu shortcut | Windows distribution | WiX Toolset |
+| `artifacts` | Built Windows x64 MSI installer for direct download | Distribution | Windows Installer |
 | `docs/development` | Windows development workflow and local storage policy | Project | None |
 | `apps/desktop/windows/flutter` | Flutter Windows build integration | Desktop platform | Generated Flutter SDK artifacts |
 | `packages/game_core/lib/src` | Renderer-independent world and story domain values | Game Core | Dart only |
